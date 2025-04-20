@@ -5,7 +5,12 @@ public class VehiculoElectricoTest {
     // TC01: Aumentar velocidad dentro del límite
     @Test
     void acelerar_deberiaIncrementarVelocidad_siHayBateriaYSinExcederLimite() {
-        // TODO: implementar test
+
+        VehiculoElectrico v = new VehiculoElectrico("Tesla", "Model S", 180);
+        v.setVelocidadActual(50);
+        v.setNivelBateria(100);
+        v.acelerar(20);
+        assertEquals(70, v.getVelocidadActual());
     }
 
     // TC02: Acelerar más allá de la velocidad máxima
