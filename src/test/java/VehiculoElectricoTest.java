@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class VehiculoElectricoTest {
 
     // TC01: Aumentar velocidad dentro del límite
     @Test
     void acelerar_deberiaIncrementarVelocidad_siHayBateriaYSinExcederLimite() {
+
         VehiculoElectrico v = new VehiculoElectrico("Tesla", "Model S", 180);
         v.setVelocidadActual(50);
         v.setNivelBateria(100);
