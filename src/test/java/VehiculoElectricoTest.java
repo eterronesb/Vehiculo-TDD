@@ -90,15 +90,27 @@ public class VehiculoElectricoTest {
     }
 
 
-    // TC10: Consumir batería y autonomía normalmente
+    // TC10: Consumir batería correctamente
     @Test
     void consumirBateria_deberiaReducirBateriaYAutonomia() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setNivelBateria(100);
+        v.setAutonomiaRestante(400); // 100 * 4
+        v.consumirBateria(10); // 10 km
+        assertEquals(90, v.getNivelBateria());
+        assertEquals(390, v.getAutonomiaRestante());
     }
 
-    // TC11: No permitir batería o autonomía negativa
+
+    // TC11: Consumir más batería de la disponible
     @Test
     void consumirBateria_noDeberiaIrPorDebajoDeCero() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setNivelBateria(10);
+        v.setAutonomiaRestante(40); // 10 * 4
+        v.consumirBateria(50); // mucho más de lo que tiene
+        assertEquals(0, v.getNivelBateria());
+        assertEquals(0, v.getAutonomiaRestante());
     }
+
 }
