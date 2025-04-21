@@ -36,6 +36,8 @@ public class VehiculoElectrico {
             velocidadActual = 0;
         }
     }
-
+    public void parar() {
+        velocidadActual = 0;
+    }
 
 }
