@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class VehiculoElectricoTest {
 
@@ -77,14 +77,18 @@ public class VehiculoElectricoTest {
     // TC08: Vehículo deportivo (vel. máx. > 180)
     @Test
     void esDeportivo_deberiaRetornarTrue_siVelocidadMaximaMayorA180() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7 Max", 220);
+        assertTrue(v.esDeportivo());
     }
+
 
     // TC09: Vehículo no deportivo (vel. máx. <= 180)
     @Test
     void esDeportivo_deberiaRetornarFalse_siVelocidadMaximaMenorOIgualA180() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7 Eco", 180);
+        assertFalse(v.esDeportivo());
     }
+
 
     // TC10: Consumir batería y autonomía normalmente
     @Test
