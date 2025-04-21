@@ -1,12 +1,14 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class VehiculoElectricoTest {
 
     // TC01: Aumentar velocidad dentro del límite
     @Test
     void acelerar_deberiaIncrementarVelocidad_siHayBateriaYSinExcederLimite() {
 
-        VehiculoElectrico v = new VehiculoElectrico("Tesla", "Model S", 180);
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
         v.setVelocidadActual(50);
         v.setNivelBateria(100);
         v.acelerar(20);
@@ -16,7 +18,11 @@ public class VehiculoElectricoTest {
     // TC02: Acelerar más allá de la velocidad máxima
     @Test
     void acelerar_noDeberiaPasarVelocidadMaxima() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setVelocidadActual(160);
+        v.setNivelBateria(100);
+        v.acelerar(50);
+        assertEquals(160, v.getVelocidadActual());
     }
 
     // TC03: Intentar acelerar sin batería
