@@ -57,6 +57,17 @@ public class VehiculoElectrico {
     public boolean esDeportivo() {
         return velocidadMaxima > 180;
     }
+    public void setAutonomiaRestante(int autonomia) {
+        this.autonomiaRestante = autonomia;
+    }
 
+    public void consumirBateria(int km) {
+        int bateriaConsumida = km;
+        int nuevaBateria = nivelBateria - bateriaConsumida;
+        int nuevaAutonomia = autonomiaRestante - km;
+
+        nivelBateria = Math.max(nuevaBateria, 0);
+        autonomiaRestante = Math.max(nuevaAutonomia, 0);
+    }
 
 }
