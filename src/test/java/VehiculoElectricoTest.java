@@ -66,8 +66,13 @@ public class VehiculoElectricoTest {
     // TC07: Recargar batería al 100%
     @Test
     void recargarBateria_deberiaLlenarBateriaYActualizarAutonomia() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setNivelBateria(20);
+        v.recargarBateria();
+        assertEquals(100, v.getNivelBateria());
+        assertEquals(400, v.getAutonomiaRestante()); // 100 * 4 km por 1%
     }
+
 
     // TC08: Vehículo deportivo (vel. máx. > 180)
     @Test
