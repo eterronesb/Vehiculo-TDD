@@ -54,5 +54,9 @@ public class VehiculoElectrico {
     public void parar() {
         velocidadActual = 0;
     }
+    public boolean esDeportivo() {
+        return velocidadMaxima > 180;
+    }
+
 
 }
