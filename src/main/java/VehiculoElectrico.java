@@ -32,6 +32,10 @@ public class VehiculoElectrico {
     }
     public void frenar(int decremento) {
         velocidadActual -= decremento;
+        if (velocidadActual < 0) {
+            velocidadActual = 0;
+        }
     }
+
 
 }

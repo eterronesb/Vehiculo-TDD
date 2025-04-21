@@ -47,7 +47,10 @@ public class VehiculoElectricoTest {
     // TC05: Frenar por debajo de cero
     @Test
     void frenar_noDeberiaIrPorDebajoDeCero() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setVelocidadActual(10);
+        v.frenar(30); // 10 - 30 = -20 → debería quedar en 0
+        assertEquals(0, v.getVelocidadActual());
     }
 
     // TC06: Parar vehículo
