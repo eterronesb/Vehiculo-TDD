@@ -4,6 +4,8 @@ public class VehiculoElectrico {
     private int velocidadMaxima;
     private int velocidadActual;
     private int nivelBateria;
+    private int autonomiaRestante;
+
 
     public VehiculoElectrico(String marca, String modelo, int velocidadMaxima) {
         this.marca = marca;
@@ -23,6 +25,19 @@ public class VehiculoElectrico {
 
     public void setNivelBateria(int nivelBateria) {
         this.nivelBateria = nivelBateria;
+    }
+
+    public int getNivelBateria() {
+        return nivelBateria;
+    }
+
+    public int getAutonomiaRestante() {
+        return autonomiaRestante;
+    }
+
+    public void recargarBateria() {
+        nivelBateria = 100;
+        autonomiaRestante = nivelBateria * 4; // 4 km por 1%
     }
 
     public void acelerar(int incremento) {
