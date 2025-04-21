@@ -56,8 +56,12 @@ public class VehiculoElectricoTest {
     // TC06: Parar vehículo
     @Test
     void parar_deberiaEstablecerVelocidadACero() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setVelocidadActual(100);
+        v.parar();
+        assertEquals(0, v.getVelocidadActual());
     }
+
 
     // TC07: Recargar batería al 100%
     @Test
