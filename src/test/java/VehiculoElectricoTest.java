@@ -28,8 +28,13 @@ public class VehiculoElectricoTest {
     // TC03: Intentar acelerar sin batería
     @Test
     void acelerar_noDeberiaAumentar_siNivelBateriaEsCero() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setVelocidadActual(60);
+        v.setNivelBateria(0);
+        v.acelerar(30); // Sin batería, no debe acelerar
+        assertEquals(60, v.getVelocidadActual()); // Velocidad se mantiene
     }
+
 
     // TC04: Frenar normalmente
     @Test
