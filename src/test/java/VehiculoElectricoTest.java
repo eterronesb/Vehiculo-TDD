@@ -35,11 +35,13 @@ public class VehiculoElectricoTest {
         assertEquals(60, v.getVelocidadActual()); // Velocidad se mantiene
     }
 
-
     // TC04: Frenar normalmente
     @Test
     void frenar_deberiaReducirVelocidad() {
-        // TODO: implementar test
+        VehiculoElectrico v = new VehiculoElectrico("Xiaomi", "SU7", 180);
+        v.setVelocidadActual(80);
+        v.frenar(20);
+        assertEquals(60, v.getVelocidadActual());
     }
 
     // TC05: Frenar por debajo de cero

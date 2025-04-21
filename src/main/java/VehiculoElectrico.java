@@ -30,4 +30,8 @@ public class VehiculoElectrico {
             velocidadActual += incremento;
         }
     }
+    public void frenar(int decremento) {
+        velocidadActual -= decremento;
+    }
+
 }
